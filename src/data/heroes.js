@@ -85,10 +85,10 @@ const HEROES = [
   profs:{armor:"None",weapons:"Simple weapons, shortswords",tools:"One instrument or artisan's tool",langs:"Common, Torum"}
 },
 {
-  id:"aoi", name:"Aoi", pron:"she/her", emoji:"🌸", aura:"#CE7B9B",
+  id:"arzo", name:"Arzo", pron:"he/him", emoji:"🌸", aura:"#CE7B9B",
   role:"Healer", kind:"Elf Druid", level:2,
-  tagline:"Flower magic flows through her.",
-  quote:"Born to human parents with a shimmering spirit-mark, you stand with one foot in the Spirit Realm. The wild petals answer you more than any book ever could.",
+  tagline:"Flower magic flows through him.",
+  quote:"Born to human parents with a shimmering spirit-mark, he stands with one foot in the Spirit Realm. The wild petals answer him more than any book ever could.",
   ac:15, hp:16, hitDice:"2d8", speed:"30 ft", init:"+1", prof:"+2", pp:15,
   ab:{STR:[8,"−1","−1",0],DEX:[13,"+1","+1",0],CON:[14,"+2","+2",0],INT:[12,"+1","+3",1],WIS:[16,"+3","+5",1],CHA:[10,"+0","+0",0]},
   skills:[["Perception","+5"],["Medicine","+5"],["History","+3"],["Investigation","+3"],["Nature","+3"]],

@@ -81,7 +81,7 @@ export default function HowToPlay({ onBack }) {
 
       <div className="htp-card">
         <h3>Spells</h3>
-        <p>Some characters cast spells — Yuki the bard, Mei the wizard, Aoi the druid, Kenji the paladin. Here&rsquo;s the quick version:</p>
+        <p>Some characters cast spells — Yuki the bard, Mei the wizard, Arzo the druid, Kenji the paladin. Here&rsquo;s the quick version:</p>
         <ul>
           <li><b>Cantrips</b> are basic spells you can cast at will. No cost, unlimited uses.</li>
           <li><b>Leveled spells</b> consume <b>spell slots</b> — your reserve of magical energy. You regain spent slots when you finish a long rest.</li>
