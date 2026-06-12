@@ -175,10 +175,10 @@ const HEROES = [
   profs:{armor:"All armor, shields",weapons:"Simple & martial weapons",tools:"Diver's armor",langs:"Common"}
 },
 {
-  id:"sora", name:"Sora", pron:"he/him", emoji:"✨", aura:"#C99A3E",
+  id:"wren", name:"Wren", pron:"he/him", emoji:"✨", aura:"#C99A3E",
   role:"Hero / Striker", kind:"Human Fighter", level:2,
   tagline:"A spirit shares his body — and his blade.",
-  quote:"A young courier on his first big delivery, when a dying spirit chose you as its final home. Now its gentle power flickers alongside your own.",
+  quote:"A young courier on his first big delivery, when a dying spirit chose him as its final home. Now its gentle power flickers alongside his own.",
   ac:18, hp:22, hitDice:"2d10", speed:"30 ft", init:"+1", prof:"+2", pp:13,
   ab:{STR:[16,"+3","+5",1],DEX:[13,"+1","+1",0],CON:[15,"+2","+4",1],INT:[10,"+0","+0",0],WIS:[12,"+1","+1",0],CHA:[8,"−1","−1",0]},
   skills:[["Athletics","+5"],["Perception","+3"],["Survival","+3"],["Stealth","+3"]],
