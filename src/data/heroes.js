@@ -1,6 +1,6 @@
 const HEROES = [
 {
-  id:"yuki", name:"Yuki", pron:"she/her", emoji:"🎭", aura:"#E08A4B",
+  id:"yuuki", name:"Yuuki", pron:"she/her", emoji:"🎭", aura:"#E08A4B",
   role:"Support", kind:"Human Bard", level:2,
   tagline:"A storyteller with a hundred faces.",
   quote:"You travelled with the island's scholar-adventurers, and came home with a satchel of riddles and a gift for becoming whoever the story needs.",
