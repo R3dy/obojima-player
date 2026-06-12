@@ -27,7 +27,7 @@ const HEROES = [
   profs:{armor:"Light armor",weapons:"Simple weapons, rapiers, longswords, shortswords",tools:"Three musical instruments, one artisan's tool",langs:"Common + one more"}
 },
 {
-  id:"mei", name:"Mei", pron:"she/her", emoji:"🦢", aura:"#5B8DD9",
+  id:"mei", name:"Mei", pron:"they/them", emoji:"🦢", aura:"#5B8DD9",
   role:"Spellcaster", kind:"Dara Wizard", level:2,
   tagline:"She folds paper into living magic.",
   quote:"Born from a tree, blank as fresh paper, until a glyph filled your mind. A witch taught you folk magic — but your real gift is origami that comes alive.",
