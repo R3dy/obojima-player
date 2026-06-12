@@ -1,0 +1,4 @@
+/* Vercel SPA config */
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
