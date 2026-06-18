@@ -2,25 +2,25 @@ import { useState } from 'react';
 import useEscapeKey from './useEscapeKey.js';
 
 export default function WorldDrawer({ onClose }) {
-  const [section, setSection] = useState('island');
+  const [section, setSection] = useState('city');
   useEscapeKey(onClose);
 
   const sections = [
-    { id: 'island', label: 'The Island' },
-    { id: 'okiri', label: 'Okiri Village' },
-    { id: 'regions', label: 'Regions' },
-    { id: 'spirits', label: 'Spirits' },
-    { id: 'history', label: 'History' },
-    { id: 'factions', label: 'Factions' },
-    { id: 'daily', label: 'Daily Life' },
+    { id: 'city', label: 'Varkenbluff' },
+    { id: 'museum', label: 'The Museum' },
+    { id: 'dannell', label: 'Dr. Dannell' },
+    { id: 'murkmire', label: 'The Murkmire' },
+    { id: 'gala', label: 'Tonight' },
+    { id: 'heist', label: 'Heist Tips' },
+    { id: 'patrons', label: 'Your Patrons' },
   ];
 
   return (
     <>
       <div className="drawer-backdrop" onClick={onClose} />
-      <div className="drawer-panel world-panel" role="dialog" aria-label="World of Obojima">
+      <div className="drawer-panel world-panel" role="dialog" aria-label="The Murkmire Heist">
         <div className="drawer-header">
-          <h2>World of Obojima</h2>
+          <h2>The Job</h2>
           <button className="drawer-close" onClick={onClose} aria-label="Close">×</button>
         </div>
 
@@ -37,541 +37,391 @@ export default function WorldDrawer({ onClose }) {
         </nav>
 
         <div className="drawer-body world-body">
-          {section === 'island' && <IslandSection />}
-          {section === 'okiri' && <OkiriSection />}
-          {section === 'regions' && <RegionsSection />}
-          {section === 'spirits' && <SpiritsSection />}
-          {section === 'history' && <HistorySection />}
-          {section === 'factions' && <FactionsSection />}
-          {section === 'daily' && <DailyLifeSection />}
+          {section === 'city' && <CitySection />}
+          {section === 'museum' && <MuseumSection />}
+          {section === 'dannell' && <DannellSection />}
+          {section === 'murkmire' && <MurkmireSection />}
+          {section === 'gala' && <GalaSection />}
+          {section === 'heist' && <HeistSection />}
+          {section === 'patrons' && <PatronsSection />}
         </div>
       </div>
     </>
   );
 }
 
-function IslandSection() {
+function CitySection() {
   return (
     <>
       <div className="drawer-section">
-        <h3>The Island of Obojima</h3>
+        <h3>The City of Varkenbluff</h3>
         <p>
-          Obojima is a world full of magic and spirits — where people live and explore,
-          and where there are festivals for every occasion. Life here is mostly idyllic,
-          with farmers tilling their fields and shepherds tending to their sheep dragons.
-          Travelers find adventure by walking from village to village, following rumors
-          and spirit companions.
+          Varkenbluff is a city of learning — home to the prestigious Varkenbluff
+          University, the Museum of Natural History, and a thriving community of
+          scholars, nobles, and merchants. Marble columns and elegant archways
+          define its architecture, and the streets hum with the bustle of academics
+          debating history, culture, and science.
         </p>
         <p>
-          To the people who live here, the world begins and ends at the shore. The ocean
-          surrounds Obojima, stretching out to the horizon in all directions. The island,
-          the ocean, and the sky are all there is.
-        </p>
-      </div>
-
-      <div className="drawer-section">
-        <h3>Tone &amp; Spirit</h3>
-        <p>
-          Obojima is a realm of leisure fantasy where time slows down. Small, sensory
-          vignettes are the heartbeat of storytelling here. It feels like getting to know
-          every nuance, quirk, and charm of a village — not every story needs to be an epic.
-        </p>
-        <p>
-          Evil does not have a strong presence. Creatures and monsters are forces of nature
-          motivated by fear or greed rather than malice. Most villains are comically ambitious,
-          predictably greedy, or filled with obstinate conviction — often with reasons rooted
-          in a misguided desire to do good.
+          But beneath its genteel surface, Varkenbluff has a darker side. The city's
+          intellectuals often dismiss what they can't explain — and sometimes that
+          dismissal invites disaster.
         </p>
       </div>
 
       <div className="drawer-section">
-        <h3>Languages</h3>
-        <div className="world-tags">
-          <div className="world-tag">
-            <div className="wt-label">Common</div>
-            <div className="wt-desc">Based on the human language, with a smattering of Naku Naku</div>
+        <h3>Where Things Happen</h3>
+        <div className="poi-list">
+          <div className="poi-item">
+            <div className="poi-name">The Sage's Quill</div>
+            <div className="poi-desc">
+              A quiet, plush tavern next to the museum that caters to academics.
+              Dr. Dannell is waiting for you here in a purple hooded robe.
+            </div>
           </div>
-          <div className="world-tag">
-            <div className="wt-label">Naku Naku</div>
-            <div className="wt-desc">The Nakudama language — "far richer for the telling of tales"</div>
+          <div className="poi-item">
+            <div className="poi-name">Varkenbluff University</div>
+            <div className="poi-desc">
+              The city's beating intellectual heart. Dr. Dannell earned her
+              doctorate here, taught here — and was recently fired from here.
+            </div>
           </div>
-          <div className="world-tag">
-            <div className="wt-label">Torum</div>
-            <div className="wt-desc">The favored language of the Spirit Realm; layered sounds non-spirits can understand but rarely voice</div>
+          <div className="poi-item">
+            <div className="poi-name">The Museum of Natural History</div>
+            <div className="poi-desc">
+              Your target. Three floors of exhibits, offices, and — tonight — a
+              private gala in the Gemstone Wing. Twelve guards patrol after hours.
+            </div>
+          </div>
+          <div className="poi-item">
+            <div className="poi-name">The City Watch Headquarters</div>
+            <div className="poi-desc">
+              If you get caught, this is where they haul you. Best avoided.
+            </div>
           </div>
         </div>
-      </div>
-
-      <div className="drawer-section">
-        <h3>Currency</h3>
-        <p>Three denominations minted by the Dawn Blossom Guild:</p>
-        <div className="world-tags">
-          <div className="world-tag">
-            <div className="wt-label">Gold Flower</div>
-            <div className="wt-desc">Large gold disks embossed with a dawn blossom flower (= 1 gp)</div>
-          </div>
-          <div className="world-tag">
-            <div className="wt-label">Sea Petal</div>
-            <div className="wt-desc">Glass petals formed from special shore sand (= 1 sp)</div>
-          </div>
-          <div className="world-tag">
-            <div className="wt-label">Copper Bud</div>
-            <div className="wt-desc">Small copper ingots etched like unbloomed dawn blossoms (= 1 cp)</div>
-          </div>
-        </div>
-        <p className="drawer-example">
-          Coins are infused with magical energy — the exchange of money is an exchange of energy
-          that keeps energy flowing through the island. Guild-minted coins "clink"; non-guild or
-          depleted coins sound "dead."
-        </p>
       </div>
     </>
   );
 }
 
-function OkiriSection() {
+function MuseumSection() {
   return (
     <>
       <div className="drawer-section">
-        <h3>Okiri Village</h3>
+        <h3>Varkenbluff Museum of Natural History</h3>
         <p>
-          Quaint, charming, and idyllic, Okiri is a farming village in the Gift of Shuritashi,
-          nestled in rolling hills between a modest wood and a lazy river.
+          A grand museum boasting enormous marble columns and elegant archways. It
+          houses exhibits on ancient plants and cultures, prehistoric creatures,
+          archaeology, and a glittering collection of gemstones and ore.
         </p>
         <p>
-          The river flows south from Mount Arbora and intersects with the east-west road, placing
-          Okiri on a crossroads. Travelers frequently pass through, bringing news. For folks
-          traveling east, Okiri is the last settlement before entering the Gale Fields.
+          The museum has <b>twelve guards</b>, a curator named <b>Alda Arkin</b>,
+          and security measures that arm after closing at 8 p.m. — including
+          magical <b>alarms</b>, animated statues, and a trapped gemstone pedestal.
+        </p>
+      </div>
+
+      <div className="drawer-section">
+        <h3>What the Public Knows</h3>
+        <div className="poi-list">
+          <div className="poi-item">
+            <div className="poi-name">First Floor</div>
+            <div className="poi-desc">
+              Grand entrance with a marble column and information desk. Also
+              contains the museum shops, ancient plants and cultures exhibits,
+              curator's office, records room, and break room.
+            </div>
+          </div>
+          <div className="poi-item">
+            <div className="poi-name">Second Floor</div>
+            <div className="poi-desc">
+              Prehistoric creatures exhibit (with a famous allosaurus),
+              Underground Wonders (gems & ore), archaeology displays, the
+              Unearthed Café, and the Gemstone Wing — where tonight's gala is.
+            </div>
+          </div>
+          <div className="poi-item">
+            <div className="poi-name">Off the Map</div>
+            <div className="poi-desc">
+              There's a basement (storage and loading docks — where spare exhibits
+              are kept) and an attic (event supplies, accessible by skylight).
+              Neither is open to the public.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="drawer-section">
+        <h3>Security You Should Know About</h3>
+        <div className="drawer-example">
+          By day: the museum is open to everyone. Guards keep an eye out but
+          won't bother you unless you're caught in a restricted area.<br /><br />
+          After 8 p.m.: alarms arm, statues animate, doors lock, and guards
+          take their stations. You'll need to plan your approach carefully.
+        </div>
+      </div>
+    </>
+  );
+}
+
+function DannellSection() {
+  return (
+    <>
+      <div className="drawer-section">
+        <h3>Dr. Cassee Dannell</h3>
+        <p>
+          A brilliant anthropologist with a secret: she's been studying the occult
+          for years. By day she's a respected academic and field scientist. By
+          night she's the only person in Varkenbluff who understands the danger of
+          the Murkmire Stone — because she's the only one who looked beyond
+          conventional history.
         </p>
         <div className="drawer-example">
-          Okiri is a feel-good village — a location where nothing catastrophic happens. No matter
-          what's going on in the world, the people of the village seem to be unconcerned and unaware.
+          Dr. Dannell is neutral good. She hired you because she's out of options:
+          the university fired her, the museum banned her, and the stone hatches
+          at midnight.
         </div>
       </div>
 
       <div className="drawer-section">
-        <h3>People &amp; Culture</h3>
+        <h3>What She Knows</h3>
+        <ul>
+          <li>The Murkmire Stone is an eldritch creature's <b>egg</b>, not a historical artifact.</li>
+          <li>The egg can't be damaged or destroyed — only contained in a <b>crystal box</b> she built.</li>
+          <li>Unearthing it triggered rapid development. It <b>hatches at midnight</b> tonight.</li>
+          <li>Once hatched, the creature will feed and grow exponentially — <b>a city-level threat</b>.</li>
+          <li>She'll wait in the alley between the museum and the Sage's Quill for your return.</li>
+        </ul>
+      </div>
+
+      <div className="drawer-section">
+        <h3>What She Gives You</h3>
+        <ul>
+          <li>A <b>gala ticket</b> for each of you — the only way to scout the Gemstone Wing.</li>
+          <li>Appropriate <b>formal attire</b> in her <b>bag of holding</b>.</li>
+          <li>The bag itself — stash your gear inside it, then smuggle it into the museum.</li>
+          <li>A rough <b>sketch map</b> of the museum layout (incomplete — she's no architect).</li>
+          <li><b>20 gp per person</b> (or 30 gp with a persuasive pitch) plus the bag of holding as the reward.</li>
+        </ul>
+      </div>
+    </>
+  );
+}
+
+function MurkmireSection() {
+  return (
+    <>
+      <div className="drawer-section">
+        <h3>The Murkmire</h3>
         <p>
-          The population is diverse — Nakudama, humans, and elves all making the village their
-          home for generations. History stretches back to the earliest days of the Nakudama Age.
+          A murky, dangerous wetland outside Varkenbluff — the kind of place where
+          prehistoric creatures were naturally preserved for millennia, and where
+          archaeologists regularly unearth strange things.
         </p>
         <p>
-          Okiri is known for the quality of wool it produces from its sheep dragons. Clever and
-          mischievous creatures, sheep dragons are the heart of village trade — their wool is
-          crafted into hats, sweaters, cloth, and blankets. The village sigil depicts one.
-        </p>
-        <p>
-          Day-to-day life is guided by tradition. Trades and responsibilities are handed down
-          through generations. There is a strong sense of community with light-touch governance.
-          Villagers handle issues among themselves, and major disputes bring representatives of
-          farmers, shepherds, fishers, and crafters to the High Hearth hall.
+          The Murkmire Stone was found here on a recent university dig. It appeared
+          to be a ritual object — a light green, opaque ovoid with strange furrows,
+          gemstone-like in sheen. Nobody could identify its composition. Dr. Dannell
+          was the only one to suspect it was not made by any known civilization.
         </p>
       </div>
 
       <div className="drawer-section">
-        <h3>Points of Interest</h3>
-        <div className="poi-list">
-          <div className="poi-item">
-            <div className="poi-name">The Commons</div>
-            <div className="poi-desc">
-              Center of the village — a low grassy mound topped by three stone pillars of different
-              heights. During the "grazing of the commons," sheep dragons eat the overgrown grass,
-              preparing the site for the festival game of Blotcher.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">The High Hall</div>
-            <div className="poi-desc">
-              Tall timber hall on a rise by the creek. Used for village meetings, winter feasting,
-              and as the sturdiest shelter during attacks.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Bree's Mercantile</div>
-            <div className="poi-desc">
-              The only merchant shop in Okiri. General goods but specializes in potion ingredients.
-              Proprietor Bree is a small roundish spirit with prickly skin resembling a Pyramid Melon.
-              Prefers trade over money.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Sheep Dragon Grazing Grounds</div>
-            <div className="poi-desc">
-              Large span of low hills beyond orchards and farmland. Dotted with rusted First Age
-              vehicle husks.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Courier Brigade Outpost</div>
-            <div className="poi-desc">
-              Stable stocked with fresh mounts for courier brigadiers passing through.
-            </div>
-          </div>
+        <h3>The Murkmire Stone</h3>
+        <div className="drawer-example">
+          Weight: 10 pounds. Size: roughly the size of a large melon. It sits on
+          a marble pedestal in the Gemstone Wing, flanked by informational placards
+          — none of which mention Dr. Dannell's theory.<br /><br />
+          <b>Starting at 10:30 p.m.</b> the egg becomes translucent and begins
+          emitting pulses of magical energy every 10 minutes. Each pulse forces
+          creatures within 20 feet to make a Wisdom save or suffer strange effects
+          — whispers, sluggishness, premonitions, and worse.
         </div>
       </div>
 
       <div className="drawer-section">
-        <h3>Festivals</h3>
+        <h3>What Happens If It Hatches</h3>
         <p>
-          Market days and festivals transform Okiri from a sleepy farming village into a festive
-          hub. Festivals are named for crops — the Cabbage Festival and Wrinklefruit Festival
-          draw the largest crowds.
-        </p>
-        <p>
-          Festival games include wrestling, accuracy tests, and the main event — <b>Blotcher</b>,
-          where teams hurl overripe produce at each other using shepherd slings. Participants wear
-          undyed wool tunics that show colorful stains.
-        </p>
-      </div>
-
-      <div className="drawer-section">
-        <h3>Outdoor Hearths</h3>
-        <p>
-          A tradition of eating outdoors defines Okiri's social life. A cluster of cooking sites
-          with hearths set into gazebo floors fills the village center. A derelict First Age food
-          truck stands at the heart of it all — like a monument to outdoor dining.
+          An eight-foot-long eldritch horror emerges — ravenous for raw meat. It
+          grows as it feeds. Guards first, then the museum, then the city. If
+          it reaches Varkenbluff University, it'll be nearly unstoppable — a
+          pony-sized nightmare that sets traps with metabolic slime and hunts by
+          instinct. <b>The egg must not hatch outside its crystal cage.</b>
         </p>
       </div>
     </>
   );
 }
 
-function RegionsSection() {
+function GalaSection() {
   return (
     <>
       <div className="drawer-section">
-        <h3>Regions of Obojima</h3>
+        <h3>Tonight's Gala — 6 p.m. to 8 p.m.</h3>
         <p>
-          Obojima is divided into six recognized regions plus the surrounding Shallows.
-          Each has its own character, landscape, and traditions.
+          A private celebration in the Gemstone Wing for wealthy donors and
+          distinguished guests. This is your reconnaissance window — the only
+          time you can legally examine the Murkmire Stone and the security
+          around it.
+        </p>
+        <p>
+          Dress code: formal attire. No weapons, no visible armor. Tuck your
+          gear into Dr. Dannell's bag of holding.
         </p>
       </div>
 
       <div className="drawer-section">
+        <h3>Key People at the Gala</h3>
         <div className="poi-list">
           <div className="poi-item">
-            <div className="poi-name">The Gift of Shuritashi</div>
+            <div className="poi-name">Alda Arkin — The Curator</div>
             <div className="poi-desc">
-              Westernmost and largest region. Named after a great spirit. Patchwork of rolling hills,
-              lush forests, and sandy beaches. Home to Okiri and Matango villages. Farmers and craftspeople.
+              An elf noble and retired professor. She deeply dislikes Dr. Dannell
+              for her occult interests. Watch her clutch — it contains a master
+              key, a map of guard patrol routes, and an alarm pass card.
             </div>
           </div>
           <div className="poi-item">
-            <div className="poi-name">The Land of Hot Water</div>
+            <div className="poi-name">Maryam Bikram — Security Captain</div>
             <div className="poi-desc">
-              Arid landscape with natural hot springs between Mount Arbora's northern slope and the sea.
-              Industry and relaxation culture; a flight fad among engineers.
+              A veteran of the city watch and a stickler for rules. Stationed at
+              the gala entrance checking tickets. Also carries a pass card.
             </div>
           </div>
           <div className="poi-item">
-            <div className="poi-name">Mount Arbora</div>
+            <div className="poi-name">Museum Gossip</div>
             <div className="poi-desc">
-              Ancient mountain visible from every corner of the island. Snowy slopes feed the island's
-              rivers. Treacherous terrain; home to some of the island's largest monsters.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">The Gale Fields</div>
-            <div className="poi-desc">
-              Vast sweeping plain of uncommonly tall grass in the center of the island. Quickest route
-              across. Domain of the howlers. The Courier Brigade maintains major roads here.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">The Brackwater Wetlands</div>
-            <div className="poi-desc">
-              Eastern, sparsely populated swamp. Settlements built on stilts. Known for mud eel fishing
-              and Hakumon's Ramen Shop.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">The Coastal Highlands</div>
-            <div className="poi-desc">
-              Southeastern plateau of craggy rock ending at dramatic sea cliffs. Sprawling cave networks
-              within cliff faces. Home to the AHA headquarters.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">The Shallows</div>
-            <div className="poi-desc">
-              Reef ringed around the island. Sandy bottom stretches miles offshore, up to 200 feet deep
-              before the coral reef rises. Beyond is the Deep — the open ocean.
+              Chat up attendees to learn rumors: the curator's been fidgety all
+              night, exhibits are stored in the basement after hours, the museum's
+              finances are struggling, or the curator collects oversized dolls.
             </div>
           </div>
         </div>
       </div>
 
       <div className="drawer-section">
-        <h3>Getting Around</h3>
-        <div className="world-tags">
-          <div className="world-tag">
-            <div className="wt-label">On Foot</div>
-            <div className="wt-desc">The most common way — village to village</div>
-          </div>
-          <div className="world-tag">
-            <div className="wt-label">Mounts</div>
-            <div className="wt-desc">Horses, bestial spirits, goats, reptiles, giant dragonflies</div>
-          </div>
-          <div className="world-tag">
-            <div className="wt-label">Vehicles</div>
-            <div className="wt-desc">Bicycles, motorbikes, scooters, cars, trucks</div>
-          </div>
-          <div className="world-tag">
-            <div className="wt-label">The Wandering Line</div>
-            <div className="wt-desc">A magical train that stops all over the island, including in the Spirit Realm</div>
-          </div>
-        </div>
+        <h3>What To Look For</h3>
+        <ul>
+          <li>Study the <b>pedestal</b> — examine its base for tiny glyphs that hint at a trap.</li>
+          <li>Spot the <b>secret doors</b> — hallways with cleaning supplies connect many exhibits.</li>
+          <li>Note the <b>vent</b> between the Gemstone Wing and the Prehistoric Predators room.</li>
+          <li>Watch the <b>curator's behavior</b> — what's she carrying? Where does she go?</li>
+        </ul>
       </div>
     </>
   );
 }
 
-function SpiritsSection() {
+function HeistSection() {
   return (
     <>
       <div className="drawer-section">
-        <h3>The Spirit Realm</h3>
+        <h3>Approaches to the Heist</h3>
         <p>
-          The Spirit Realm is a plane of eternal twilight overlaid on top of Obojima, occupying
-          the same space but existing beyond the ken of most physical beings. What may appear to
-          be an abandoned farmstead on the Physical Realm might be a bustling marketplace in the
-          Spirit Realm.
+          The museum closes at 8 p.m. and security activates. Here are ways to
+          handle it:
         </p>
       </div>
 
       <div className="drawer-section">
-        <h3>Types of Spirits</h3>
-        <div className="poi-list">
-          <div className="poi-item">
-            <div className="poi-name">Homebodies</div>
-            <div className="poi-desc">
-              Spirits that live in the Physical Realm among Obojimans. As much a part of society
-              as any other race.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Wanderers</div>
-            <div className="poi-desc">
-              Spirits who travel freely between both realms. Often work as guides, messengers,
-              and merchants.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Ghosts</div>
-            <div className="poi-desc">
-              Spirits bound exclusively to the Spirit Realm. Obojimans say someone who "has a ghost"
-              if they have a noisy spirit.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Elder Spirits</div>
-            <div className="poi-desc">
-              Ancient and powerful spirits that inhabit both realms. Often guardians of their domain.
-              Shrines at the foot of mountains and shorelines of lakes and rivers mark the entrance
-              into an elder spirit's domain.
-            </div>
-          </div>
-        </div>
+        <h3>🔇 Hide Inside</h3>
+        <ul>
+          <li><b>Cleaning supply closets</b> — secret doors connect them between exhibits. Cramped but safe.</li>
+          <li><b>Public privies</b> — guards nominally check them. Latch a stall from inside.</li>
+          <li><b>Attic or basement</b> — guards don't sweep them at closing. The mimic in the basement might object.</li>
+        </ul>
       </div>
 
       <div className="drawer-section">
-        <h3>Demons &amp; Corruption</h3>
+        <h3>🌙 Sneak Back In</h3>
+        <ul>
+          <li><b>Front doors</b> — pick the lock (DC 16), bypass the alarm with a pass card, avoid the falling net trap and animated statues.</li>
+          <li><b>Attic skylight</b> — climb the building with grappling hooks, pick the skylight lock (DC 14). Dark outside by then.</li>
+          <li><b>Basement loading docks</b> — shove open the stiff doors (noisy, DC 15) or find the secret tunnel from the northwest corner.</li>
+        </ul>
+      </div>
+
+      <div className="drawer-section">
+        <h3>🃏 Social Infiltration</h3>
+        <ul>
+          <li><b>Blend in at the gala.</b> Gala attendees are nobles with no idea what they're celebrating.</li>
+          <li><b>Steal a pass card</b> — found in the break room (area V7) or lifted from a guard (DC 14 Sleight of Hand).</li>
+          <li><b>Steal the curator's clutch</b> — contains keys, guard routes, and a pass card.</li>
+          <li><b>Find the arcane records</b> — the records room (area V6) reveals exactly where alarms are placed.</li>
+        </ul>
+      </div>
+
+      <div className="drawer-section">
+        <h3>⚠️ Critical Details</h3>
+        <ul>
+          <li>The pedestal is <b>rigged</b> — remove the stone and all doors lock (arcane lock, DC 20 to bypass).</li>
+          <li>Swap the real stone with a <b>fake jade chunk</b> from area V9 (DC 10 Sleight of Hand).</li>
+          <li>Starting at 10:30 p.m., the egg <b>pulses</b> with strange effects — be within 20 feet only briefly.</li>
+          <li>At <b>midnight</b>, it hatches. Game over.</li>
+        </ul>
+      </div>
+
+      <div className="drawer-section">
+        <h3>Guards After Hours — Where They'll Be</h3>
         <p>
-          Demons are spirits so filled with malice that their bodies transform into twisted
-          caricatures. Corrupted Spirits are those tainted by "the Corruption" and forced into
-          demon transformation.
-        </p>
-        <p>
-          Since a great earthquake and tsunami three months ago, strange phenomena have appeared
-          on the eastern side of the island — weird patches of magic grass that hamper travel,
-          bubbling pools of random goo. The Corruption is a supernatural anomaly spreading from
-          the east.
+          Two in the grand entrance. Two in the Gemstone Wing. Two patrolling
+          Underground Wonders and Archaeology. Two in Prehistoric Predators. One
+          each in Ancient Plants, Ancient Cultures, Creatures of the Past, and
+          the Unearthed Café. Finding the guard patrol document in the curator's
+          office gives you advantage on Stealth checks to sneak past them.
         </p>
       </div>
     </>
   );
 }
 
-function HistorySection() {
+function PatronsSection() {
   return (
     <>
       <div className="drawer-section">
-        <h3>History of Obojima</h3>
-        <p>The island's history is divided into four great ages:</p>
-      </div>
-
-      <div className="drawer-section">
-        <div className="timeline">
-          <div className="tl-item">
-            <div className="tl-era">First Age</div>
-            <div className="tl-desc">
-              Prehistory — era of unknown people who left peculiar technology scattered across
-              the island. First Age relics (~1980s analog tech) are integrated into everyday life.
-            </div>
-          </div>
-          <div className="tl-arrow">↓</div>
-          <div className="tl-item">
-            <div className="tl-era">Nakudama Age</div>
-            <div className="tl-desc">
-              ~2000 years ago — the first Queen swam across the ocean, birthed the first 100
-              Nakudama, and founded the kingdom and capital city of Lilywin. The demon Oghmai
-              usurped the throne; monarchy was dissolved after his defeat.
-            </div>
-          </div>
-          <div className="tl-arrow">↓</div>
-          <div className="tl-item">
-            <div className="tl-era">Age of Humanity</div>
-            <div className="tl-desc">
-              1200 years ago — seafaring humans arrived. Humans and Nakudama established joint
-              settlements. The first elves were born as a gift to the people of Okiri from an
-              elder spirit.
-            </div>
-          </div>
-          <div className="tl-arrow">↓</div>
-          <div className="tl-item">
-            <div className="tl-era">Dara Age</div>
-            <div className="tl-desc">
-              300 years ago — the dara emerged from the forest. The Corruption may herald a
-              new era.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="drawer-section">
-        <h3>Technology</h3>
+        <h3>The Golden Vault</h3>
         <p>
-          The most advanced technology is also the oldest. First Age relics are integrated into
-          everyday life — vending machines, cassette players, VHS, instaprint cameras, computers,
-          and vehicles.
+          A mysterious organization that recruits operatives for dangerous,
+          ethically-motivated missions. They contacted you through a music box
+          delivered by golden key. Their voice told you exactly what's at stake
+          — and that they believe Dr. Dannell when no one else will.
         </p>
         <div className="drawer-example">
-          Wizards use cassettes as spell scrolls. Vending machines are enchanted to sell magical
-          trinkets. Spirits can "whelm" (power) devices, or wizards use the <i>Jolt</i> spell.
-        </div>
-      </div>
-    </>
-  );
-}
-
-function FactionsSection() {
-  return (
-    <>
-      <div className="drawer-section">
-        <h3>Factions of Obojima</h3>
-        <p>
-          The island has no central government, but several organizations shape life across
-          its regions.
-        </p>
-      </div>
-
-      <div className="drawer-section">
-        <div className="poi-list">
-          <div className="poi-item">
-            <div className="poi-name">AHA (Academic Adventurers)</div>
-            <div className="poi-desc">
-              Archaeologists, historians, and archivists headquartered in the Coastal Highlands.
-              Directed by the Asloh — a trio of scholars from different races.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Courier Brigade</div>
-            <div className="poi-desc">
-              "Knights of the Postal Service." Devoted to safe delivery across Obojima. Maintain
-              forts at crossroads. Most couriers ride large flightless birds.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Mariners' Guild</div>
-            <div className="poi-desc">
-              Undersea explorers founded by Captain Clintock 30 years ago. Four lodges at cardinal
-              points; only north and south remain active.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Society of Young Stewards</div>
-            <div className="poi-desc">
-              Youth scouts teaching nature stewardship and good citizenship. Chapters named after
-              birds — Chickadees, Bluebills, Kingfishers, and more.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Sword Schools</div>
-            <div className="poi-desc">
-              Rival masters of the blade. Several traditions, each with two masters of equal rank.
-            </div>
-          </div>
-          <div className="poi-item">
-            <div className="poi-name">Witch Covens</div>
-            <div className="poi-desc">
-              Various covens across the island — the Fish Head Coven in the Gale Fields, the
-              Cloud Cap Coven at Mount Arbora, and others.
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-function DailyLifeSection() {
-  return (
-    <>
-      <div className="drawer-section">
-        <h3>How Obojimans Live</h3>
-        <p>
-          Most Obojimans get by as farmers or fisherfolk. Other common trades include artisans,
-          merchants, specialty chefs, and potion crafters. Each settlement has its own character,
-          quirks, nuances, and traditions.
-        </p>
-      </div>
-
-      <div className="drawer-section">
-        <h3>Everyday Magic</h3>
-        <p>
-          Magic permeates daily life. Folk magic, academy wizardry, and witch coven trade secrets
-          are all employed. Potions are always in demand — a farmer might use a Potion of Rabbit's
-          Speed to finish harvest. New magical breakthroughs are greeted with curiosity and excitement.
-        </p>
-      </div>
-
-      <div className="drawer-section">
-        <h3>Governance</h3>
-        <p>
-          No monarch or governing body claims rulership over the island. Governance is left to
-          individual settlements — some look to elders, some elect mayors, others form cooperative
-          leagues (common in the Gift of Shuritashi).
-        </p>
-      </div>
-
-      <div className="drawer-section">
-        <h3>Beliefs About Death</h3>
-        <p>
-          Beliefs vary by region. Coastal villagers say the departed have gone "beyond the horizon";
-          farmers in the Gale Fields say they've "returned to the island." Many believe everyone's
-          essence is magic. Funerals are both celebration and sorrow. Burial methods include earth
-          burial, pyre, ocean immersion, or hilltop placement.
-        </p>
-      </div>
-
-      <div className="drawer-section">
-        <h3>"Beyond the Island"</h3>
-        <p>
-          "Beyond the Island" is a favorite storytelling game among tavern goers. Players weave
-          fantastical tales about what might exist beyond the horizon. Those who leave don't return.
-        </p>
-        <div className="drawer-example">
-          The ocean surrounds Obojima, stretching out to the horizon in all directions. The island,
-          the ocean, and the sky are all there is — or so the saying goes.
+          "Greetings, operatives. The Golden Vault has learned that the egg of
+          an eldritch horror has been mistaken for a historical object... This
+          quest requires you to infiltrate the museum, steal the egg, and return
+          it to Dr. Dannell, who will neutralize it. Good luck, operatives."
         </div>
       </div>
 
       <div className="drawer-section">
-        <h3>Combat on Obojima</h3>
+        <h3>Dr. Dannell's Connections</h3>
         <p>
-          Most situations can be solved with smarts, tact, creativity, and magic. The further east
-          you go, the more dangerous the world becomes. Past the Gale Fields, being handy with a
-          blade is more valuable.
+          Each of you has a reason to trust Dr. Dannell:
+        </p>
+        <ul>
+          <li><b>Family friend:</b> The Dannell clan are well-known professors. You've rubbed shoulders with them before.</li>
+          <li><b>Museum enthusiast:</b> Her work is cited extensively. You earned her respect through correspondence.</li>
+          <li><b>Former student:</b> She taught your class. She knows you're sharp — and discreet.</li>
+          <li><b>Expedition guide:</b> You were hired muscle on her Murkmire dig. Something felt wrong out there.</li>
+          <li><b>Temple connection:</b> Your faith and her research crossed paths. Your god approves of this mission.</li>
+          <li><b>Informant:</b> You've traded secrets with her before. She never asked where you got them.</li>
+          <li><b>City Watch:</b> Her case landed on your desk before the brass buried it. You didn't forget.</li>
+          <li><b>Fey-touched:</b> Your patron nudged you toward her. The fey know things about eggs like this.</li>
+        </ul>
+      </div>
+
+      <div className="drawer-section">
+        <h3>The Reward</h3>
+        <p>
+          Dr. Dannell offers her <b>bag of holding</b> plus <b>20 gp per character</b> —
+          or <b>30 gp</b> if you make a compelling case (DC 13 Persuasion). The Golden
+          Vault sweetens the deal with an <b>uncommon magic item</b> of your choice,
+          delivered the next day on a successful mission.
+        </p>
+        <p>
+          But the real reward? <b>Nobody in Varkenbluff dies tonight.</b>
         </p>
       </div>
     </>

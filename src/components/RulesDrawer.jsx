@@ -13,7 +13,7 @@ export default function RulesDrawer({ onClose }) {
             <h3>What D&amp;D Is</h3>
             <p>A collaborative storytelling game. The <b>Game Master</b> describes the world and controls every character who isn&rsquo;t you. You control one hero and decide what they do. No board, no win condition, no script — the story is whatever you make it.</p>
             <p>Think of it like an open-world game where the dialogue options are <b>anything you can think of</b>.</p>
-            <p>You&rsquo;re on <b>Obojima</b> — an island of spirits, strange First Age technology, and villages where adventure hides in plain sight.</p>
+            <p>You&rsquo;re in <b>Varkenbluff</b> — a city of scholars and museums, where an eldritch egg hides in plain sight and tonight&rsquo;s heist could save thousands.</p>
           </div>
 
           <div className="drawer-section">
@@ -90,7 +90,7 @@ export default function RulesDrawer({ onClose }) {
             <ul>
               <li><b>Healing potions:</b> Everyone has one. Drink to recover HP.</li>
               <li><b>Gear:</b> Rope, grappling hooks, lanterns, tools — use them creatively.</li>
-              <li><b>Gold Flowers:</b> Obojima&rsquo;s currency. Spend in villages.</li>
+              <li><b>Gold:</b> Standard currency (gp). Silver (sp) and copper (cp) too.</li>
             </ul>
           </div>
 

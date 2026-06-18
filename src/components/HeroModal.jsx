@@ -584,7 +584,7 @@ function TabDetails({ hero }) {
         </div>
         <div className="currency-item">
           <div className="curr-lab">GP</div>
-          <div className="curr-val" contentEditable suppressContentEditableWarning>{hero.equip.find(e => e.includes('gold flowers'))?.match(/(\d+)/)?.[1] || 0}</div>
+            <div className="curr-val" contentEditable suppressContentEditableWarning>{hero.equip.find(e => e.match(/(\d+)\s*gp/))?.match(/(\d+)/)?.[1] || 0}</div>
         </div>
         <div className="currency-item">
           <div className="curr-lab">EP</div>

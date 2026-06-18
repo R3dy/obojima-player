@@ -1,232 +1,239 @@
 const HEROES = [
 {
-  id:"yuuki", name:"Yuuki", pron:"she/her", emoji:"🎭", aura:"#E08A4B",
-  role:"Support", kind:"Human Bard", level:2,
-  tagline:"A storyteller with a hundred faces.",
-  quote:"You travelled with the island's scholar-adventurers, and came home with a satchel of riddles and a gift for becoming whoever the story needs.",
-  ac:13, hp:15, hitDice:"2d8", speed:"30 ft", init:"+2", prof:"+2", pp:11,
-  ab:{STR:[8,"−1","−1",0],DEX:[14,"+2","+4",1],CON:[13,"+1","+1",0],INT:[12,"+1","+1",0],WIS:[10,"+0","+0",0],CHA:[16,"+3","+5",1]},
-  skills:[["Performance","+5"],["Persuasion","+5"],["Deception","+5"],["History","+3"],["Investigation","+3"]],
+  id:"thorn", name:"Thorn", pron:"she/her", emoji:"🗡️", aura:"#6B8E7B",
+  role:"Infiltrator", kind:"Half-Elf Rogue", level:1,
+  tagline:"A shadow-walker who opens every lock.",
+  quote:"You grew up on the rooftops of Varkenbluff, mapping the city by its unlocked windows and forgotten passages. Dr. Dannell once caught you breaking into the university library — and instead of turning you in, she asked what book you were looking for. You owe her.",
+  ac:14, hp:9, hitDice:"1d8", speed:"30 ft", init:"+3", prof:"+2", pp:12,
+  ab:{STR:[8,"−1","−1",0],DEX:[16,"+3","+5",1],CON:[13,"+1","+1",0],INT:[12,"+1","+3",1],WIS:[11,"+0","+0",0],CHA:[16,"+3","+3",0]},
+  skills:[["Stealth","+7",true],["Thieves' Tools","+7",true],["Deception","+5"],["Sleight of Hand","+5"],["Perception","+2"],["Investigation","+3"]],
   attacks:[
-    {n:"Rapier",hit:"+4",dmg:"1d8+2",nt:"piercing · finesse"},
-    {n:"Vicious Mockery",hit:"DC 13",dmg:"1d4",nt:"enemy saves (WIS); psychic + rattled"}
+    {n:"Rapier",hit:"+5",dmg:"1d8+3",nt:"piercing · finesse"},
+    {n:"Dagger",hit:"+5",dmg:"1d4+3",nt:"piercing · finesse, thrown"},
+    {n:"Sneak Attack",hit:"—",dmg:"+1d6",nt:"once a turn when hidden or friend is nearby"}
   ],
-  spell:{dc:"13",atk:"+5",slots:3,
-    cantrips:["Vicious Mockery","Mage Hand"],
-    label:"Spells Known",known:["Healing Word","Faerie Fire","Dissonant Whispers"]},
+  spell:null,
   features:{
     cls:[
-      {n:"Bardic Inspiration",t:"Give a friend a d6 they can add to a roll later. A few times per rest.",sig:true},
-      {n:"Jack of All Trades",t:"Add +1 to any ability check you're not already trained in."},
-      {n:"Song of Rest",t:"Your friends heal a little extra when the party takes a short rest."}
-    ],
-    anc:[{n:"Versatile (Human)",t:"A little bit good at everything — extra skill and flexibility."}],
-    bg:{n:"Wise Reputation (AHA)",t:"You know many of the island's scholars and clever folk."}
-  },
-  equip:["Leather armor","Rapier","Bellow flute","Explorer's Pack","50 ft rope","5 candles + tinderbox","1 healing potion","AHA research journal","13 gold flowers"],
-  profs:{armor:"Light armor",weapons:"Simple weapons, rapiers, longswords, shortswords",tools:"Three musical instruments, one artisan's tool",langs:"Common + one more"}
-},
-{
-  id:"mei", name:"Mei", pron:"they/them", emoji:"🦢", aura:"#5B8DD9",
-  role:"Spellcaster", kind:"Dara Wizard", level:2,
-  tagline:"She folds paper into living magic.",
-  quote:"Born from a tree, blank as fresh paper, until a glyph filled your mind. A witch taught you folk magic — but your real gift is origami that comes alive.",
-  ac:12, hp:13, hitDice:"2d6", speed:"30 ft", init:"+2", prof:"+2", pp:13,
-  ab:{STR:[8,"−1","−1",0],DEX:[14,"+2","+2",0],CON:[13,"+1","+1",0],INT:[16,"+3","+5",1],WIS:[12,"+1","+3",1],CHA:[10,"+0","+0",0]},
-  skills:[["Arcana","+5"],["Investigation","+5"],["Nature","+5"],["Survival","+3"],["Perception","+3"]],
-  attacks:[
-    {n:"Fire Bolt",hit:"+5",dmg:"1d10",nt:"fire · range 120 ft"},
-    {n:"Dagger",hit:"+4",dmg:"1d4+2",nt:"piercing · finesse, thrown"}
-  ],
-  spell:{dc:"13",atk:"+5",slots:3,
-    cantrips:["Fire Bolt","Mage Hand","Light"],
-    label:"Prepared",known:["Mage Armor","Magic Missile","Sleep","Detect Magic","Feather Fall"]},
-  features:{
-    cls:[
-      {n:"Origami Constructs",t:"Fold a paper crane, crab, or tiger and bind it to a friend to protect or help them.",sig:true},
-      {n:"Arcane Recovery",t:"Once a day on a short rest, get back a little of your spell energy."}
+      {n:"Sneak Attack (+1d6)",t:"Add 1d6 damage when you hit from hiding or a friend is next to the enemy.",sig:true},
+      {n:"Expertise",t:"Double your proficiency bonus for Stealth and Thieves' Tools (+7 instead of +5)."},
+      {n:"Thieves' Cant",t:"You know the secret language of rogues — hidden messages in everyday conversation."}
     ],
     anc:[
-      {n:"Create Talisman",t:"Make a paper charm: Sun (dash/dodge), Earth (survive a hit), or Moon (extra radiant damage)."},
-      {n:"Knowledge Talisman (1/day)",t:"A friend can add a d6 to one ability check."}
+      {n:"Darkvision",t:"See in the dark up to 60 ft."},
+      {n:"Fey Ancestry",t:"Advantage against being charmed, and magic can't put you to sleep."}
     ],
-    bg:{n:"Sibling Student (Witch)",t:"A trusted friend inside a witch coven can help you when you need it."}
+    bg:{n:"Criminal Contact (Criminal)",t:"You have a reliable contact in Varkenbluff's underworld who can pass messages and rumors."}
   },
-  equip:["Spellbook","Alchemist's supplies","Stack of fine paper","9 common ingredients (you know what they do)","Dagger","Hooded lantern","1 healing potion","Witch's hat","9 gold flowers"],
-  profs:{armor:"None",weapons:"Daggers, darts, slings, quarterstaffs, light crossbows",tools:"Alchemist's supplies",langs:"Common + one more"}
+  equip:["Leather armor","Rapier","Two daggers","Shortbow + 20 arrows","Thieves' tools","Burglar's pack","Crowbar","Dark clothes with hood","10 gp"],
+  profs:{armor:"Light armor",weapons:"Simple weapons, hand crossbows, longswords, rapiers, shortswords",tools:"Thieves' tools",langs:"Common, Elvish, Thieves' Cant"}
 },
 {
-  id:"hana", name:"Hana", pron:"she/her", emoji:"🐉", aura:"#D9614B",
-  role:"Quick Fighter", kind:"Dara Monk", level:2,
-  tagline:"Small, brave, and fast as the wind.",
-  quote:"Barely three feet tall and bright red, you've always seen the spirit world others miss. You move like the gentle sheep dragons — knowing when to fight and when to flee.",
-  ac:15, hp:16, hitDice:"2d8", speed:"40 ft", init:"+3", prof:"+2", pp:14,
-  ab:{STR:[12,"+1","+3",1],DEX:[16,"+3","+5",1],CON:[13,"+1","+1",0],INT:[10,"+0","+0",0],WIS:[14,"+2","+2",0],CHA:[8,"−1","−1",0]},
-  skills:[["Acrobatics","+5"],["Stealth","+5"],["Insight","+4"],["Perception","+4"],["Athletics","+3"],["Persuasion","+1"]],
+  id:"lila", name:"Lila", pron:"she/her", emoji:"🎭", aura:"#C0506A",
+  role:"Face", kind:"Tiefling Bard", level:1,
+  tagline:"A silver-tongued performer who talks her way through anything.",
+  quote:"You've entertained nobles and criminals alike in Varkenbluff's lounges. Dr. Dannell was the only professor who listened when you argued that music could reveal hidden truths. Now her crisis needs your voice — and your secrets.",
+  ac:13, hp:9, hitDice:"1d8", speed:"30 ft", init:"+2", prof:"+2", pp:11,
+  ab:{STR:[8,"−1","−1",0],DEX:[14,"+2","+4",1],CON:[13,"+1","+1",0],INT:[11,"+0","+0",0],WIS:[12,"+1","+1",0],CHA:[17,"+3","+5",1]},
+  skills:[["Persuasion","+5"],["Deception","+5"],["Performance","+5"],["Insight","+3"],["Acrobatics","+4"]],
   attacks:[
-    {n:"Unarmed Strike",hit:"+5",dmg:"1d4+3",nt:"Martial Arts (use DEX)"},
+    {n:"Rapier",hit:"+4",dmg:"1d8+2",nt:"piercing · finesse"},
+    {n:"Dagger",hit:"+4",dmg:"1d4+2",nt:"piercing · finesse, thrown"},
+    {n:"Vicious Mockery",hit:"DC 13",dmg:"1d4",nt:"enemy saves (WIS); psychic + taunted"}
+  ],
+  spell:{dc:"13",atk:"+5",slots:2,
+    cantrips:["Vicious Mockery","Mage Hand","Thaumaturgy (racial)"],
+    label:"Spells Known",known:["Charm Person","Disguise Self","Healing Word","Sleep"]},
+  features:{
+    cls:[
+      {n:"Bardic Inspiration (d6)",t:"As a bonus action, hand a d6 to a friend. They can add it to any d20 roll within the next 10 minutes. 3 uses per long rest.",sig:true}
+    ],
+    anc:[
+      {n:"Hellish Resistance",t:"You resist fire damage — handy if a distraction goes up in flames."},
+      {n:"Darkvision",t:"See in the dark up to 60 ft. Infernal heritage has its perks."}
+    ],
+    bg:{n:"By Popular Demand (Entertainer)",t:"You can always find a place to perform and a room to stay."}
+  },
+  equip:["Leather armor","Rapier","Dagger","Entertainer's pack","Lute","Costume clothes","Disguise kit","5 gp"],
+  profs:{armor:"Light armor",weapons:"Simple weapons, hand crossbows, longswords, rapiers, shortswords",tools:"Lute, flute, disguise kit",langs:"Common, Infernal"}
+},
+{
+  id:"orin", name:"Orin", pron:"he/him", emoji:"📚", aura:"#4A7DC9",
+  role:"Arcanist", kind:"Gnome Wizard", level:1,
+  tagline:"A tiny scholar with a massive spellbook.",
+  quote:"You've spent years decoding magical wards and ancient symbols in Varkenbluff University's restricted library. Dr. Dannell was your favorite teacher — she believed your theories about arcane detection when no one else did. Now those theories are about to save lives.",
+  ac:11, hp:8, hitDice:"1d6", speed:"25 ft", init:"+1", prof:"+2", pp:11,
+  ab:{STR:[8,"−1","−1",0],DEX:[13,"+1","+1",0],CON:[15,"+2","+2",0],INT:[17,"+3","+5",1],WIS:[12,"+1","+3",1],CHA:[10,"+0","+0",0]},
+  skills:[["Arcana","+5"],["Investigation","+5"],["History","+5"],["Nature","+3"]],
+  attacks:[
+    {n:"Fire Bolt",hit:"+5",dmg:"1d10",nt:"fire · range 120 ft"},
+    {n:"Dagger",hit:"+3",dmg:"1d4+1",nt:"piercing · finesse, thrown"}
+  ],
+  spell:{dc:"13",atk:"+5",slots:2,
+    cantrips:["Fire Bolt","Mage Hand","Minor Illusion"],
+    label:"Prepared",known:["Detect Magic","Find Familiar","Mage Armor","Shield","Sleep","Magic Missile"]},
+  features:{
+    cls:[
+      {n:"Arcane Recovery",t:"Once per day during a short rest, recover 1 level of spell energy.",sig:true}
+    ],
+    anc:[
+      {n:"Gnome Cunning",t:"Advantage on INT, WIS, and CHA saving throws against magic — you shrug off spells."},
+      {n:"Darkvision",t:"See in the dark up to 60 ft."},
+      {n:"Artificer's Lore",t:"Double proficiency on History checks about magic items and alchemy."},
+      {n:"Tinker",t:"You can build tiny clockwork devices — a lighter, a music box, or a noise-maker."}
+    ],
+    bg:{n:"Researcher (Sage)",t:"You know where to find the information you need — libraries, archives, or old colleagues."}
+  },
+  equip:["Spellbook","Quarterstaff","Dagger","Component pouch","Scholar's pack","Ink & pen","10 sheets parchment","Magnifying glass","10 gp"],
+  profs:{armor:"None",weapons:"Daggers, darts, slings, quarterstaffs, light crossbows",tools:"Calligrapher's supplies",langs:"Common, Gnomish, Elvish"}
+},
+{
+  id:"kael", name:"Kael", pron:"he/him", emoji:"🏹", aura:"#5E8C3E",
+  role:"Scout", kind:"Wood Elf Ranger", level:1,
+  tagline:"Eyes sharp as a hawk in the dark.",
+  quote:"You tracked poachers through the Murkmire for years before Dr. Dannell hired you as a guide for her expedition. When she unearthed the stone, you felt something wrong ripple through the swamp. You've been watching her back ever since.",
+  ac:14, hp:12, hitDice:"1d10", speed:"35 ft", init:"+3", prof:"+2", pp:14,
+  ab:{STR:[12,"+1","+3",1],DEX:[17,"+3","+5",1],CON:[14,"+2","+2",0],INT:[10,"+0","+0",0],WIS:[14,"+2","+2",0],CHA:[8,"−1","−1",0]},
+  skills:[["Stealth","+5"],["Perception","+4"],["Survival","+4"],["Athletics","+3"],["Nature","+2"]],
+  attacks:[
+    {n:"Longbow",hit:"+5",dmg:"1d8+3",nt:"range 150/600 · two-handed"},
+    {n:"Shortsword",hit:"+5",dmg:"1d6+3",nt:"piercing · finesse, light"}
+  ],
+  spell:null,
+  features:{
+    cls:[
+      {n:"Favored Enemy (Humanoids)",t:"Advantage on Survival to track city guards and watchfolk, and on INT checks to recall info about them.",sig:true},
+      {n:"Natural Explorer (Forests)",t:"In forest terrain: difficult terrain doesn't slow the party, you can't get lost, and you stay alert while foraging."}
+    ],
+    anc:[
+      {n:"Darkvision",t:"See in the dark up to 60 ft."},
+      {n:"Keen Senses",t:"You're trained in Perception — those ears miss nothing."},
+      {n:"Mask of the Wild",t:"You can hide when lightly obscured by rain, leaves, mist, or other natural phenomena."},
+      {n:"Fleet of Foot",t:"Your walking speed is 35 ft — you're fast for an elf."}
+    ],
+    bg:{n:"Wanderer (Outlander)",t:"You have an excellent memory for maps and can always find food and water for the group."}
+  },
+  equip:["Leather armor","Longbow + 20 arrows","Two shortswords","Explorer's pack","50 ft rope","Hooded lantern","5 torches","Camouflage cloak","10 gp"],
+  profs:{armor:"Light & medium armor, shields",weapons:"Simple & martial weapons",tools:"Herbalism kit",langs:"Common, Elvish, Sylvan"}
+},
+{
+  id:"mira", name:"Mira", pron:"she/her", emoji:"✨", aura:"#C99A3E",
+  role:"Support", kind:"Human Cleric (Trickery)", level:1,
+  tagline:"A quiet priest who bends shadows to protect her friends.",
+  quote:"The temple of the Masked God taught you that sometimes the right lie saves more lives than the wrong truth. When Dr. Dannell came to you with news of the egg, your god whispered: 'Help her. The light needs shadows today.'",
+  ac:15, hp:10, hitDice:"1d8", speed:"30 ft", init:"+2", prof:"+2", pp:20,
+  ab:{STR:[8,"−1","−1",0],DEX:[14,"+2","+2",0],CON:[14,"+2","+2",0],INT:[10,"+0","+0",0],WIS:[17,"+3","+5",1],CHA:[12,"+1","+3",1]},
+  skills:[["Insight","+5"],["Perception","+5"],["Persuasion","+3"],["Stealth","+4"]],
+  attacks:[
+    {n:"Toll the Dead",hit:"DC 13",dmg:"1d8/1d12",nt:"WIS save; d12 if enemy already hurt"},
+    {n:"Dagger",hit:"+4",dmg:"1d4+2",nt:"piercing · finesse, thrown"}
+  ],
+  spell:{dc:"13",atk:"+5",slots:2,
+    cantrips:["Guidance","Toll the Dead","Mending"],
+    label:"Prepared",known:["Bless","Cure Wounds","Healing Word","Guiding Bolt","Disguise Self (domain)","Charm Person (domain)"]},
+  features:{
+    cls:[
+      {n:"Blessing of the Trickster",t:"As an action, give an ally advantage on Stealth checks for 1 hour. Perfect for a heist.",sig:true},
+      {n:"Domain Spells",t:"Disguise Self and Charm Person are always prepared — they don't count against your limit."}
+    ],
+    anc:[
+      {n:"Observant",t:"+5 to passive Perception and Investigation (already counted). You can also read lips."},
+      {n:"Versatile (Human)",t:"You trained hard and gained the Observant feat — nothing escapes your notice."}
+    ],
+    bg:{n:"Shelter of the Faithful (Acolyte)",t:"You and your party can receive free healing and care at any temple of your faith."}
+  },
+  equip:["Leather armor","Shield","Dagger","Holy symbol","Priest's pack","Disguise kit","Incense & censer","Chalk (10 pieces)","5 days rations","15 gp"],
+  profs:{armor:"Light & medium armor, shields",weapons:"Simple weapons",tools:"Disguise kit",langs:"Common, Elvish, Thieves' Cant"}
+},
+{
+  id:"brin", name:"Brin", pron:"he/him", emoji:"🛡️", aura:"#7C6B5E",
+  role:"Muscle", kind:"Dwarf Fighter", level:1,
+  tagline:"A tough-as-nails soldier who never misses a shot.",
+  quote:"The Varkenbluff City Watch taught you to shoot first and ask questions after you're both safe. Then Dr. Dannell's case crossed your desk — a real threat, ignored by bureaucrats. You quit the Watch that afternoon. Some things matter more than the rules.",
+  ac:18, hp:13, hitDice:"1d10", speed:"25 ft", init:"+2", prof:"+2", pp:13,
+  ab:{STR:[15,"+2","+4",1],DEX:[14,"+2","+2",0],CON:[15,"+2","+4",1],INT:[10,"+0","+0",0],WIS:[13,"+1","+1",0],CHA:[8,"−1","−1",0]},
+  skills:[["Athletics","+4"],["Perception","+3"],["Survival","+3"],["Intimidation","+1"]],
+  attacks:[
+    {n:"Longbow",hit:"+6",dmg:"1d8+2",nt:"range 150/600 · +2 from Archery style"},
+    {n:"Battleaxe",hit:"+4",dmg:"1d8+2",nt:"slashing · 1d10+2 two-handed"},
+    {n:"Handaxe (thrown)",hit:"+4",dmg:"1d6+2",nt:"range 20/60"}
+  ],
+  spell:null,
+  features:{
+    cls:[
+      {n:"Second Wind",t:"As a bonus action, catch your breath and heal 1d10+1 HP. 1 use per short rest.",sig:true},
+      {n:"Fighting Style: Archery",t:"+2 to hit with ranged weapons (already counted in your longbow)."},
+      {n:"Dwarven Toughness",t:"You get +1 HP per level — you can take more hits than most."}
+    ],
+    anc:[
+      {n:"Darkvision",t:"See in the dark up to 60 ft. Light's nice, but unnecessary."},
+      {n:"Dwarven Resilience",t:"Advantage on saving throws against poison, and you resist poison damage."},
+      {n:"Stonecunning",t:"Double proficiency on History checks about stonework — secret doors, traps, and old construction."}
+    ],
+    bg:{n:"Military Rank (Soldier)",t:"You still have friends in the City Watch. They might look the other way — once."}
+  },
+  equip:["Chain mail","Shield","Longbow + 20 arrows","Battleaxe","Two handaxes","Explorer's pack","Manacles","50 ft rope","City watch badge (retired)","10 gp"],
+  profs:{armor:"All armor, shields",weapons:"Simple & martial weapons",tools:"Smith's tools",langs:"Common, Dwarvish"}
+},
+{
+  id:"sera", name:"Sera", pron:"she/her", emoji:"🌙", aura:"#8E6FB0",
+  role:"Charmer", kind:"Half-Elf Warlock", level:1,
+  tagline:"An elegant negotiator with a fey patron's power.",
+  quote:"The Lady of Twilight appeared to you in a forgotten garden and offered you the power to walk unseen through locked doors. You used it to steal gossip, then secrets, then the truth. When the fey whispered Dr. Dannell's name, you knew your real work was about to begin.",
+  ac:13, hp:10, hitDice:"1d8", speed:"30 ft", init:"+2", prof:"+2", pp:11,
+  ab:{STR:[8,"−1","−1",0],DEX:[15,"+2","+2",0],CON:[14,"+2","+2",0],INT:[10,"+0","+0",0],WIS:[12,"+1","+3",1],CHA:[17,"+3","+5",1]},
+  skills:[["Deception","+5"],["Persuasion","+5"],["Arcana","+2"],["Sleight of Hand","+4"]],
+  attacks:[
+    {n:"Eldritch Blast",hit:"+5",dmg:"1d10",nt:"force · range 120 ft · two beams!"},
+    {n:"Dagger",hit:"+4",dmg:"1d4+2",nt:"piercing · finesse, thrown"}
+  ],
+  spell:{dc:"13",atk:"+5",slots:1,
+    cantrips:["Eldritch Blast","Minor Illusion"],
+    label:"Spells Known",known:["Charm Person","Hex","Faerie Fire (patron)","Sleep (patron)"]},
+  features:{
+    cls:[
+      {n:"Fey Presence",t:"As an action, charm or frighten every creature in a 10-foot cube. They get a save — but while they blink, you slip away.",sig:true},
+      {n:"Pact Magic",t:"You have one spell slot, but it returns on a short rest. Use it wisely."},
+      {n:"Eldritch Blast",t:"At level 1, this is already one of the best cantrips in the game — two beams of force."}
+    ],
+    anc:[
+      {n:"Darkvision",t:"See in the dark up to 60 ft."},
+      {n:"Fey Ancestry",t:"Advantage against being charmed, and magic can't put you to sleep."}
+    ],
+    bg:{n:"False Identity (Charlatan)",t:"You have a second identity with documents, contacts, and a disguise. Perfect for talking your way in."}
+  },
+  equip:["Leather armor","Dagger","Arcane focus (crystal pendant)","Diplomat's pack","Fine clothes","Disguise kit","Forged papers","Mirror","5 gp"],
+  profs:{armor:"Light armor",weapons:"Simple weapons",tools:"Disguise kit",langs:"Common, Elvish, Sylvan"}
+},
+{
+  id:"pip", name:"Pip", pron:"he/him", emoji:"🍀", aura:"#E0A040",
+  role:"Acrobat", kind:"Halfling Monk", level:1,
+  tagline:"A lucky little acrobat who squeezes through impossible gaps.",
+  quote:"You grew up on the streets of Varkenbluff — small enough to fit through basement windows, fast enough to never get caught. When a desperate halfling messenger found you with Dr. Dannell's note, you recognized her name from the university scandal. You like a good underdog story.",
+  ac:15, hp:10, hitDice:"1d8", speed:"25 ft", init:"+3", prof:"+2", pp:11,
+  ab:{STR:[8,"−1","−1",0],DEX:[17,"+3","+5",1],CON:[14,"+2","+2",0],INT:[12,"+1","+1",0],WIS:[13,"+1","+1",0],CHA:[11,"+0","+0",0]},
+  skills:[["Acrobatics","+5"],["Stealth","+5"],["Sleight of Hand","+5"],["Athletics","+1"]],
+  attacks:[
+    {n:"Unarmed Strike",hit:"+5",dmg:"1d4+3",nt:"Martial Arts (use DEX) · bonus action attack"},
     {n:"Shortsword",hit:"+5",dmg:"1d6+3",nt:"piercing · finesse"},
     {n:"Dart (thrown)",hit:"+5",dmg:"1d4+3",nt:"range 20/60"}
   ],
   spell:null,
   features:{
     cls:[
-      {n:"Flurry of Blows",t:"After you Attack, spend 1 ki to make two extra unarmed strikes as a bonus action.",sig:true},
-      {n:"Ki (2 points)",t:"Spend ki for Flurry of Blows, Patient Defense (dodge), or Step of the Wind (dash/leap). Save DC 12."},
-      {n:"Unarmored Movement",t:"You move 10 ft faster (already in your speed). Great for racing around a giant house."}
+      {n:"Martial Arts",t:"Your unarmed strikes use 1d4+DEX. When you attack, you can punch or kick again as a bonus action.",sig:true},
+      {n:"Unarmored Defense",t:"Without any armor, your AC is 10 + DEX + WIS = 15. You're light on your feet."}
     ],
     anc:[
-      {n:"Create + Might Talisman (1/day)",t:"Make paper charms; the Might Talisman lets a friend add a d6 to a saving throw."},
-      {n:"Spirit Senses",t:"You speak Torum and get along with spirits others can't even see."}
+      {n:"Lucky",t:"If you roll a 1 on an attack, ability check, or saving throw, reroll it — once."},
+      {n:"Brave",t:"Advantage against being frightened. Small body, big courage."},
+      {n:"Naturally Stealthy",t:"You can hide behind creatures larger than you — which is most of them."},
+      {n:"Halfling Nimbleness",t:"You can move through the space of larger creatures — squeeze past guards with ease."}
     ],
-    bg:{n:"Connections Beyond (Spirit Kin)",t:"You know two spirits by name and can reach them with a ritual."}
+    bg:{n:"City Secrets (Urchin)",t:"You know the secret routes through Varkenbluff. Your party can move twice as fast through the city outside combat."}
   },
-  equip:["Shortsword","10 darts","Grappling hook + 50 ft silk rope","Bedroll","10 candles","Two spirit-linked ingredients","A gift from a spirit friend","1 healing potion","10 gold flowers"],
-  profs:{armor:"None",weapons:"Simple weapons, shortswords",tools:"One instrument or artisan's tool",langs:"Common, Torum"}
-},
-{
-  id:"arzo", name:"Arzo", pron:"he/him", emoji:"🌸", aura:"#CE7B9B",
-  role:"Healer", kind:"Elf Druid", level:2,
-  tagline:"Flower magic flows through him.",
-  quote:"Born to human parents with a shimmering spirit-mark, he stands with one foot in the Spirit Realm. The wild petals answer him more than any book ever could.",
-  ac:15, hp:16, hitDice:"2d8", speed:"30 ft", init:"+1", prof:"+2", pp:15,
-  ab:{STR:[8,"−1","−1",0],DEX:[13,"+1","+1",0],CON:[14,"+2","+2",0],INT:[12,"+1","+3",1],WIS:[16,"+3","+5",1],CHA:[10,"+0","+0",0]},
-  skills:[["Perception","+5"],["Medicine","+5"],["History","+3"],["Investigation","+3"],["Nature","+3"]],
-  attacks:[
-    {n:"Produce Flame",hit:"+5",dmg:"1d8",nt:"fire · range 30 ft"},
-    {n:"Scimitar",hit:"+3",dmg:"1d6+1",nt:"slashing · finesse"}
-  ],
-  spell:{dc:"13",atk:"+5",slots:3,
-    cantrips:["Produce Flame","Guidance","Dancing Lights"],
-    label:"Prepared",known:["Cure Wounds","Healing Word","Entangle","Thunderwave","Faerie Fire"]},
-  features:{
-    cls:[
-      {n:"Petal Dance",t:"Spend a Wild Shape use to bloom into flower magic — heal a hurt friend or shield the group.",sig:true},
-      {n:"Wild Shape (2/rest)",t:"Turn into a small animal — a mouse or cat — to sneak, scout, or squeeze through gaps."}
-    ],
-    anc:[
-      {n:"Ethereal Sight",t:"As an action, see creatures in the Spirit Realm as glowing outlines."},
-      {n:"Oaka Mark: Nature",t:"You know the Dancing Lights cantrip; at higher levels, more nature magic."},
-      {n:"Darkvision",t:"See in the dark up to 60 ft."}
-    ],
-    bg:{n:"Wise Reputation (AHA)",t:"You know many of the island's scholars and clever folk."}
-  },
-  equip:["Hide armor","Wooden shield","Scimitar","Druidic focus","Herbalism kit","Explorer's Pack","50 ft rope","1 healing potion","13 gold flowers"],
-  profs:{armor:"Light & medium armor, shields (no metal)",weapons:"Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears",tools:"Herbalism kit",langs:"Common, Druidic"}
-},
-{
-  id:"taro", name:"Taro", pron:"he/him", emoji:"🐸", aura:"#5E8C3E",
-  role:"Tough Bruiser", kind:"Nakudama Barbarian", level:2,
-  tagline:"A hungry frog-folk with a huge axe.",
-  quote:"A frog-folk who never met a snack — or a story — he didn't love. Loud, fearless, and almost impossible to knock down.",
-  ac:13, hp:27, hitDice:"2d12", speed:"25 ft (swim 30)", init:"+1", prof:"+2", pp:11,
-  ab:{STR:[16,"+3","+5",1],DEX:[13,"+1","+1",0],CON:[15,"+2","+4",1],INT:[10,"+0","+0",0],WIS:[12,"+1","+1",0],CHA:[8,"−1","−1",0]},
-  skills:[["Athletics","+5"],["Intimidation","+1"],["Mechanics","+2"],["Salvage","+2"]],
-  attacks:[
-    {n:"Greataxe",hit:"+5",dmg:"1d12+3",nt:"slashing · +2 more while Raging"},
-    {n:"Handaxe (thrown)",hit:"+5",dmg:"1d6+3",nt:"range 20/60"}
-  ],
-  spell:null,
-  features:{
-    cls:[
-      {n:"Rage (2/day)",t:"As a bonus action, roar into a Rage: +2 damage on Strength hits and you shrug off most physical damage.",sig:true},
-      {n:"Reckless Attack",t:"Swing wildly for a better chance to hit — but enemies hit you more easily too."},
-      {n:"Danger Sense",t:"You're great at dodging traps and blasts (advantage on those saves)."}
-    ],
-    anc:[
-      {n:"Amphibious",t:"You breathe air and water — handy in a witch's flooded cellar."},
-      {n:"Standing Leap",t:"Jump 20 ft across or 15 ft up, no run-up needed."},
-      {n:"Grasping Tongue",t:"Flick your tongue to snatch a small object up to 15 ft away."}
-    ],
-    bg:{n:"Machine Whisperer (Mechanic)",t:"Spend a few minutes with a machine and you know if it can be fixed."}
-  },
-  equip:["Greataxe","Four handaxes","Explorer's Pack","Grappling hook","Ball bearings","Flask of oil","Unfinished mechanical trinket","1 healing potion","15 gold flowers"],
-  profs:{armor:"Light & medium armor, shields",weapons:"Simple & martial weapons",tools:"Three artisan's tools",langs:"Common, Naku Naku"}
-},
-{
-  id:"kenji", name:"Kenji", pron:"he/him", emoji:"🌊", aura:"#3E8E9E",
-  role:"Protector", kind:"Elf Paladin", level:2,
-  tagline:"A diver sworn to shield his friends.",
-  quote:"A diver who knows the Shallows better than dry land. You've sworn to flow around every obstacle and sweep danger away from the people you protect.",
-  ac:18, hp:20, hitDice:"2d10", speed:"30 ft", init:"+0", prof:"+2", pp:11,
-  ab:{STR:[16,"+3","+3",0],DEX:[10,"+0","+0",0],CON:[13,"+1","+1",0],INT:[8,"−1","−1",0],WIS:[12,"+1","+3",1],CHA:[15,"+2","+4",1]},
-  skills:[["Athletics","+5"],["Insight","+3"],["Nature","+1"],["Religion","+1"]],
-  attacks:[
-    {n:"Longsword",hit:"+5",dmg:"1d8+3",nt:"slashing · 1d10+3 two-handed"},
-    {n:"Javelin (thrown)",hit:"+5",dmg:"1d6+3",nt:"range 30/120"}
-  ],
-  spell:{dc:"12",atk:"+4",slots:2,
-    cantrips:["Guidance"],
-    label:"Prepared",known:["Cure Wounds","Bless","Shield of Faith"]},
-  features:{
-    cls:[
-      {n:"Lay on Hands (10 pool)",t:"Touch a hurt friend and heal them. Spread 10 healing points however you like.",sig:true},
-      {n:"Divine Smite",t:"When you hit with a weapon, spend a spell slot to deal an extra 2d8 radiant damage."},
-      {n:"Fighting Style: Defense",t:"+1 to your armor (already counted in AC 18)."},
-      {n:"Divine Sense",t:"Sense powerful spirits and unnatural things nearby."}
-    ],
-    anc:[
-      {n:"Oaka Mark: Harmony",t:"You know the Guidance cantrip to steady a friend's roll."},
-      {n:"Ethereal Sight & Darkvision",t:"See into the Spirit Realm, and see in the dark up to 60 ft."}
-    ],
-    bg:{n:"Once a Member (Diver)",t:"The Mariners' lodges give you free room, board, and a helping hand."}
-  },
-  equip:["Chain mail","Shield","Longsword","Two javelins","Holy symbol","Grappling hook + 50 ft rope","Hooded lantern","1 healing potion","11 gold flowers"],
-  profs:{armor:"All armor, shields",weapons:"Simple & martial weapons",tools:"Diver's armor",langs:"Common"}
-},
-{
-  id:"wren", name:"Wren", pron:"he/him", emoji:"✨", aura:"#C99A3E",
-  role:"Hero / Striker", kind:"Human Fighter", level:2,
-  tagline:"A spirit shares his body — and his blade.",
-  quote:"A young courier on his first big delivery, when a dying spirit chose him as its final home. Now its gentle power flickers alongside his own.",
-  ac:18, hp:22, hitDice:"2d10", speed:"30 ft", init:"+1", prof:"+2", pp:13,
-  ab:{STR:[16,"+3","+5",1],DEX:[13,"+1","+1",0],CON:[15,"+2","+4",1],INT:[10,"+0","+0",0],WIS:[12,"+1","+1",0],CHA:[8,"−1","−1",0]},
-  skills:[["Athletics","+5"],["Perception","+3"],["Survival","+3"],["Stealth","+3"]],
-  attacks:[
-    {n:"Longsword",hit:"+5",dmg:"1d8+3",nt:"slashing · 1d10+3 two-handed"},
-    {n:"Javelin (thrown)",hit:"+5",dmg:"1d6+3",nt:"range 30/120"}
-  ],
-  spell:null,
-  features:{
-    cls:[
-      {n:"Action Surge (1/rest)",t:"Take a whole extra action on your turn — attack twice in one turn!",sig:true},
-      {n:"Second Wind",t:"As a bonus action, catch your breath and heal yourself 1d10+2."},
-      {n:"Fighting Style: Defense",t:"+1 to your armor (already counted in AC 18)."}
-    ],
-    anc:[{n:"Versatile (Human)",t:"A little bit good at everything — extra skill and flexibility."}],
-    bg:{n:"Pocket Map (Courier)",t:"A worn map showing secret Brigade-only paths across the island. You and Lomi are both couriers!"}
-  },
-  equip:["Chain mail","Shield","Longsword","Two javelins","Climber's kit","Hooded lantern","Cobbler's tools","1 healing potion","11 gold flowers"],
-  profs:{armor:"All armor, shields",weapons:"Simple & martial weapons",tools:"Cobbler's tools",langs:"Common + one more"}
-},
-{
-  id:"riku", name:"Riku", pron:"he/him", emoji:"🗡️", aura:"#8E6FB0",
-  role:"Sneak", kind:"Nakudama Rogue", level:2,
-  tagline:"A clever frog-folk who slips past anything.",
-  quote:"A diver who'd rather outsmart a problem than out-muscle it. A bit of wax, a pinch of smarts, and a whole lot of magic gets you in — and out — of anywhere.",
-  ac:14, hp:17, hitDice:"2d8", speed:"25 ft (swim 30)", init:"+3", prof:"+2", pp:13,
-  ab:{STR:[8,"−1","−1",0],DEX:[16,"+3","+5",1],CON:[13,"+1","+1",0],INT:[14,"+2","+4",1],WIS:[12,"+1","+1",0],CHA:[10,"+0","+0",0]},
-  skills:[["Stealth","+5",true],["Thieves' Tools","+5",true],["Investigation","+4"],["Sleight of Hand","+3"],["Perception","+3"],["Nature","+4"],["Athletics","+1"]],
-  attacks:[
-    {n:"Dagger",hit:"+5",dmg:"1d4+3",nt:"piercing · finesse, thrown"},
-    {n:"Shortbow",hit:"+5",dmg:"1d6+3",nt:"range 80/320"},
-    {n:"Sneak Attack",hit:"—",dmg:"+1d6",nt:"once a turn when hidden or a friend is near the target"}
-  ],
-  spell:null,
-  features:{
-    cls:[
-      {n:"Sneak Attack (+1d6)",t:"Add 1d6 damage when you strike from hiding or a friend is next to the enemy.",sig:true},
-      {n:"Cunning Action",t:"As a bonus action every turn, Dash, Hide, or Disengage — zip around the room."},
-      {n:"Expertise",t:"You're a true expert at Stealth and picking locks (doubled bonus = +5)."}
-    ],
-    anc:[
-      {n:"Amphibious & Standing Leap",t:"Breathe underwater and leap 20 ft across or 15 ft up."},
-      {n:"Latching Tongue",t:"Stick your tongue to something bigger and pull yourself toward it — perfect for climbing."}
-    ],
-    bg:{n:"Once a Member (Diver)",t:"The Mariners' lodges give you free room, board, and a helping hand."}
-  },
-  equip:["Leather armor","Two daggers","Shortbow + 20 arrows","Thieves' tools","Grappling hook","Explorer's Pack","Chest","1 healing potion","11 gold flowers"],
-  profs:{armor:"Light armor",weapons:"Simple weapons, hand crossbows, longswords, rapiers, shortswords",tools:"Thieves' tools",langs:"Common, Naku Naku, Thieves' Cant"}
+  equip:["Shortsword","10 darts","Dungeoneer's pack","50 ft rope","Grappling hook","Ball bearings","Small mirror","Crowbar","Tiny lockbox with pet mouse","10 gp"],
+  profs:{armor:"None",weapons:"Simple weapons, shortswords",tools:"Thieves' tools",langs:"Common, Halfling"}
 }
 ];
 
