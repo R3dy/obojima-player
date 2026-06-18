@@ -1,7 +1,7 @@
 const HEROES = [
 {
   id:"thorn", name:"Thorn", pron:"she/her", emoji:"🗡️", aura:"#6B8E7B",
-  role:"Infiltrator", kind:"Half-Elf Rogue", level:1,
+  role:"Infiltrator", kind:"Half-Elf Rogue", level:2,
   tagline:"A shadow-walker who opens every lock.",
   quote:"You grew up on the rooftops of Varkenbluff, mapping the city by its unlocked windows and forgotten passages. Dr. Dannell once caught you breaking into the university library — and instead of turning you in, she asked what book you were looking for. You owe her.",
   ac:14, hp:9, hitDice:"1d8", speed:"30 ft", init:"+3", prof:"+2", pp:12,
@@ -30,7 +30,7 @@ const HEROES = [
 },
 {
   id:"lila", name:"Lila", pron:"she/her", emoji:"🎭", aura:"#C0506A",
-  role:"Face", kind:"Tiefling Bard", level:1,
+  role:"Face", kind:"Tiefling Bard", level:2,
   tagline:"A silver-tongued performer who talks her way through anything.",
   quote:"You've entertained nobles and criminals alike in Varkenbluff's lounges. Dr. Dannell was the only professor who listened when you argued that music could reveal hidden truths. Now her crisis needs your voice — and your secrets.",
   ac:13, hp:9, hitDice:"1d8", speed:"30 ft", init:"+2", prof:"+2", pp:11,
@@ -59,7 +59,7 @@ const HEROES = [
 },
 {
   id:"orin", name:"Orin", pron:"he/him", emoji:"📚", aura:"#4A7DC9",
-  role:"Arcanist", kind:"Gnome Wizard", level:1,
+  role:"Arcanist", kind:"Gnome Wizard", level:2,
   tagline:"A tiny scholar with a massive spellbook.",
   quote:"You've spent years decoding magical wards and ancient symbols in Varkenbluff University's restricted library. Dr. Dannell was your favorite teacher — she believed your theories about arcane detection when no one else did. Now those theories are about to save lives.",
   ac:11, hp:8, hitDice:"1d6", speed:"25 ft", init:"+1", prof:"+2", pp:11,
@@ -89,7 +89,7 @@ const HEROES = [
 },
 {
   id:"kael", name:"Kael", pron:"he/him", emoji:"🏹", aura:"#5E8C3E",
-  role:"Scout", kind:"Wood Elf Ranger", level:1,
+  role:"Scout", kind:"Wood Elf Ranger", level:2,
   tagline:"Eyes sharp as a hawk in the dark.",
   quote:"You tracked poachers through the Murkmire for years before Dr. Dannell hired you as a guide for her expedition. When she unearthed the stone, you felt something wrong ripple through the swamp. You've been watching her back ever since.",
   ac:14, hp:12, hitDice:"1d10", speed:"35 ft", init:"+3", prof:"+2", pp:14,
@@ -118,7 +118,7 @@ const HEROES = [
 },
 {
   id:"mira", name:"Mira", pron:"she/her", emoji:"✨", aura:"#C99A3E",
-  role:"Support", kind:"Human Cleric (Trickery)", level:1,
+  role:"Support", kind:"Human Cleric (Trickery)", level:2,
   tagline:"A quiet priest who bends shadows to protect her friends.",
   quote:"The temple of the Masked God taught you that sometimes the right lie saves more lives than the wrong truth. When Dr. Dannell came to you with news of the egg, your god whispered: 'Help her. The light needs shadows today.'",
   ac:15, hp:10, hitDice:"1d8", speed:"30 ft", init:"+2", prof:"+2", pp:20,
@@ -147,7 +147,7 @@ const HEROES = [
 },
 {
   id:"brin", name:"Brin", pron:"he/him", emoji:"🛡️", aura:"#7C6B5E",
-  role:"Muscle", kind:"Dwarf Fighter", level:1,
+  role:"Muscle", kind:"Dwarf Fighter", level:2,
   tagline:"A tough-as-nails soldier who never misses a shot.",
   quote:"The Varkenbluff City Watch taught you to shoot first and ask questions after you're both safe. Then Dr. Dannell's case crossed your desk — a real threat, ignored by bureaucrats. You quit the Watch that afternoon. Some things matter more than the rules.",
   ac:18, hp:13, hitDice:"1d10", speed:"25 ft", init:"+2", prof:"+2", pp:13,
@@ -177,7 +177,7 @@ const HEROES = [
 },
 {
   id:"sera", name:"Sera", pron:"she/her", emoji:"🌙", aura:"#8E6FB0",
-  role:"Charmer", kind:"Half-Elf Warlock", level:1,
+  role:"Charmer", kind:"Half-Elf Warlock", level:2,
   tagline:"An elegant negotiator with a fey patron's power.",
   quote:"The Lady of Twilight appeared to you in a forgotten garden and offered you the power to walk unseen through locked doors. You used it to steal gossip, then secrets, then the truth. When the fey whispered Dr. Dannell's name, you knew your real work was about to begin.",
   ac:13, hp:10, hitDice:"1d8", speed:"30 ft", init:"+2", prof:"+2", pp:11,
@@ -207,7 +207,7 @@ const HEROES = [
 },
 {
   id:"pip", name:"Pip", pron:"he/him", emoji:"🍀", aura:"#E0A040",
-  role:"Acrobat", kind:"Halfling Monk", level:1,
+  role:"Acrobat", kind:"Halfling Monk", level:2,
   tagline:"A lucky little acrobat who squeezes through impossible gaps.",
   quote:"You grew up on the streets of Varkenbluff — small enough to fit through basement windows, fast enough to never get caught. When a desperate halfling messenger found you with Dr. Dannell's note, you recognized her name from the university scandal. You like a good underdog story.",
   ac:15, hp:10, hitDice:"1d8", speed:"25 ft", init:"+3", prof:"+2", pp:11,
