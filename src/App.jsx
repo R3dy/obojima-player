@@ -4,6 +4,7 @@ import HeroGallery from './components/HeroGallery.jsx';
 import HeroModal from './components/HeroModal.jsx';
 import RulesDrawer from './components/RulesDrawer.jsx';
 import WorldDrawer from './components/WorldDrawer.jsx';
+import HandoutsModal from './components/HandoutsModal.jsx';
 import useEscapeKey from './components/useEscapeKey.js';
 import HEROES from './data/heroes.js';
 
@@ -11,6 +12,7 @@ export default function App() {
   const [selected, setSelected] = useState(null);
   const [showRules, setShowRules] = useState(false);
   const [showWorld, setShowWorld] = useState(false);
+  const [showHandouts, setShowHandouts] = useState(false);
 
   const openHero = useCallback((id) => {
     setSelected(HEROES.find(h => h.id === id));
@@ -23,7 +25,11 @@ export default function App() {
 
   return (
     <div className="app-root">
-      <TopBar onOpenRules={() => setShowRules(true)} onOpenWorld={() => setShowWorld(true)} />
+      <TopBar
+        onOpenRules={() => setShowRules(true)}
+        onOpenWorld={() => setShowWorld(true)}
+        onOpenHandouts={() => setShowHandouts(true)}
+      />
 
       <HeroGallery heroes={HEROES} onSelect={openHero} />
 
@@ -37,6 +43,10 @@ export default function App() {
 
       {showWorld && (
         <WorldDrawer onClose={() => setShowWorld(false)} />
+      )}
+
+      {showHandouts && (
+        <HandoutsModal onClose={() => setShowHandouts(false)} />
       )}
     </div>
   );

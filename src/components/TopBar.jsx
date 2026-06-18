@@ -1,4 +1,4 @@
-export default function TopBar({ onOpenRules, onOpenWorld }) {
+export default function TopBar({ onOpenRules, onOpenWorld, onOpenHandouts }) {
   return (
     <header className="topbar">
       <div className="topbar-brand">
@@ -6,6 +6,9 @@ export default function TopBar({ onOpenRules, onOpenWorld }) {
         <span className="version">Level 1</span>
       </div>
       <div className="topbar-actions">
+        <button className="btn-handouts" onClick={onOpenHandouts}>
+          Handouts
+        </button>
         <button className="btn-world" onClick={onOpenWorld}>
           World
         </button>
