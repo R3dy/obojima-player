@@ -1623,3 +1623,5 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ::-webkit-scrollbar-thumb:hover { background: var(--text-tertiary); }
 ::selection { background: rgba(99,102,241,0.25); color: var(--text-primary); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tt-click { cursor: pointer; transition: background 0.15s; border-radius: 4px; }
+.tt-click:hover { background: rgba(255,255,255,0.04); }

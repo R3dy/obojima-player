@@ -239,4 +239,4 @@ const HEROES = [
 
 export default HEROES;
 export const ABIL_ORDER = ["STR","DEX","CON","INT","WIS","CHA"];
-export const ABIL_FULL = {STR:"Strength",DEX:"Dexterity",CON:"Toughness",INT:"Smarts",WIS:"Wisdom",CHA:"Charm"};
+export const ABIL_FULL = {STR:"Strength",DEX:"Dexterity",CON:"Constitution",INT:"Intelligence",WIS:"Wisdom",CHA:"Charisma"};
